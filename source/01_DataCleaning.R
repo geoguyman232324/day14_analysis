@@ -28,3 +28,6 @@ nhic <- nhic %>%
   mutate(mentalhealth_servere= ifelse(kesslerscore>=13, "Servere", "Not"))
 nhic <- nhic %>%
   replace_with_na(replace=list(POORYN= 9))
+nhic <- nhic %>%
+  replace_with_na(replace=list(AGE= c(997,998,999)))
+save(nhic, file="nhic.csv")                  
